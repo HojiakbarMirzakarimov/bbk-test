@@ -1,0 +1,12 @@
+{
+ "administrator": "Administrators" ,
+ "product": "Product",
+ "client":"Client",
+    "courier":"Courier",
+    "orders":"Order",
+    "profile":"Profile",
+    "back": "back",
+    "add": "edit and save ",
+    "janibek": "Janibek Mahatov",
+    "admin":"Admin"
+}

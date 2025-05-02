@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button{
+    border: 0;outline: none;
+    cursor: pointer;
+}
+
+li{
+    cursor: pointer;
+    list-style: none;
+}
+
+input{
+    outline: none;
+}
+
+
+.main{
+    display: flex; 
+}
+
+.container{
+    // margin: 0 auto;
+    padding-right: 24px;
+    width: 100%;
+}
+
+.routes_pages{
+    width: 100%;
+}
+

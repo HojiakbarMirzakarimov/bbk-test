@@ -1,0 +1,40 @@
+.languages_text {
+    font-family: $golos;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: $black;
+}
+
+.language_modal {
+    width: 100%;
+    height: auto;
+    padding: 12px;
+    background-color: $white;
+    border-radius: 20px;
+    position: absolute;
+    left: 0;
+    top: 55px;
+    box-shadow: 1px 0px 32px -4px #11111114;
+
+    li {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 5px;
+
+        .language_modal_flags {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+}
+
+.language_flags_icons {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
