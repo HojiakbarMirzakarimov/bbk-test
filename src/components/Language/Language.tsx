@@ -26,7 +26,7 @@ export default function Language({ isOpen }: LanguageProps) {
 
   const changeLange = (lang:LanguageItem) => {
     i18n.changeLanguage(lang.code)
-    setSelectLang(lang)
+    setSelectLang(lang)  
   }
 
   return (

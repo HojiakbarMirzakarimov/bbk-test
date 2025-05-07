@@ -1,12 +1,19 @@
 {
     "administrator": "Администратор",
     "product": "Продукт",
-    "client":"Клиенты",
-    "courier":"Курьеры",
-    "orders":"Заказы",
-    "profile":"Профиль",
+    "client": "Клиенты",
+    "courier": "Курьеры",
+    "orders": "Заказы",
+    "profile": "Профиль",
     "back": "назад",
     "add": "изменить и сохранить",
     "janibek": "Жанибек Махатов",
-    "admin":"Админ"
+    "admin": "Админ",
+    "edit": "изменить",
+    "profileInformation": "данные профиля",
+    "fullName": "Ф.И.О.",
+    "axessForRole": "роль для доступа",
+    "totalCommonality": "Всего обшего",
+    "": "",
+    "": ""
 }
