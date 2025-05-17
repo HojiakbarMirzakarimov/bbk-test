@@ -5,11 +5,25 @@ import { useTranslation } from "react-i18next"
 import addIcon from '../../assets/Icon/add_icons.svg'
 import FotoUi from "../../ui/FotoUi"
 import BackBtn from "../../ui/BackBtn"
+import useProfileData from '../../store/useProfileData.js'
+import { useEffect } from "react"
+import InputPhoneNum from "../../ui/InputPhoneNum"
 
 
 export default function ProfileBg() {
+  const { profileData, setProfileData } = useProfileData();
+
+  useEffect(() => {
+    setProfileData()
+  }, [])
+
+  console.log(profileData);
+
+
   const { t } = useTranslation()
   const Navigate = useNavigate()
+
+
   return (
     <section>
       <div className="container">
@@ -19,7 +33,7 @@ export default function ProfileBg() {
             <ButtonOrange icon={addIcon} text={t('add')} onClick={(e) => console.log(e)} />
           </BackBtn>
           <form className="profile_form">
-            <FotoUi text={t("edit")} />
+            <FotoUi image={profileData?.image} text={t("edit")} />
 
             <div>
               <div className="profile_form_wrapper">
@@ -28,16 +42,18 @@ export default function ProfileBg() {
                 <div className="profile_input_wrapper">
                   <div className="profile_input_label">
                     <label>{t("fullName")}</label>
-                    <input type="text" />
+                    <input value={profileData?.full_name} type="text" />
                   </div>
 
                   <div className="profile_input_label">
-                    <label>{t("fullName")}</label>
-                    <input type="text" />
+                    <label>{t("phoneNumber")}</label>
+                    <InputPhoneNum>
+                    <input value={profileData?.phone_number} type="text" />
+                    </InputPhoneNum>
                   </div>
 
                   <div className="profile_input_label">
-                    <label>{t("fullName")}</label>
+                    <label>{t("password")}</label>
                     <input type="text" />
                   </div>
                 </div>
@@ -51,15 +67,15 @@ export default function ProfileBg() {
 
                 <div className="profile_input_wrapper">
                   <div className="profile_input_label">
-                    <label>{t("fullName")}</label>
-                    <input type="text" />
+                    <label>{t("role")}</label>
+                    {/* <input value={profileData.user_roles[0]} type="text" /> */}
                   </div>
- 
+
                 </div>
 
               </div>
             </div>
-            
+
           </form>
         </div>
 

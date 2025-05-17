@@ -14,6 +14,10 @@
    "fullName": "Full name",
    "axessForRole": "Axess Forr Role",
    "totalCommonality": "Total commonality",
-   "": "",
-   "": ""
+   "addFoto": "Add",
+   "phoneNumber": "Phone number *",
+   "password":"password",
+   "selectYourRole":"Select your Role",
+   "role":"role",
+   "":""
 }

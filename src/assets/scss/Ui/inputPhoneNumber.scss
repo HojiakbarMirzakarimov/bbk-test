@@ -1,0 +1,24 @@
+.input_phone_num{
+    display: flex;
+    align-items: center;
+    border: 1px solid #E9ECEF;
+    width: 100%;
+    height: 40px;
+    background-color: $white;
+    border-radius: 16px;
+
+    input {
+        width: 100% !important;
+        height: 100% !important;padding-left: 6px !important;
+         border: none !important;
+   
+    }
+
+    .input_phone_num_code{
+        padding-left: 10px;
+font-family: $golos;
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;        
+    }
+}

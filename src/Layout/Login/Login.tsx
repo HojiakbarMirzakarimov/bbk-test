@@ -2,7 +2,7 @@ import LogoFoto from '../../assets/images/Login.png'
 import bbkIcon from '../../assets/Icon/bbk.svg'
 import { IoEyeSharp } from "react-icons/io5";
 import { FaEyeSlash } from "react-icons/fa";
-import { useRef, useState } from 'react';
+import { FormEvent, useRef, useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
@@ -11,22 +11,22 @@ import useToken from './store/useToken';
 
 export default function Login() {
   const { setToken} = useToken()
-  const elPhoneNumber = useRef()
-  const elPassword = useRef()
-  const [isVisible, setIsvisble] = useState(false)
-  const [isError, setIsError] = useState(false)
+  const elPhoneNumber = useRef<HTMLInputElement>(null)
+  const elPassword = useRef<HTMLInputElement>(null)
+  const [isVisible, setIsvisble] = useState<boolean>(false)
+  const [isError, setIsError] = useState<boolean>(false)
 
   const clickVisible = () => {
     setIsvisble(!isVisible)
   }
 
 
-  const handleSubmitForm = (evt) => {
+  const handleSubmitForm = (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault()
 
     const requestBody = {
-      phone_number: elPhoneNumber.current.value,
-      password: elPassword.current.value
+      phone_number: elPhoneNumber.current?.value || '',
+      password: elPassword.current?.value || ''
     }
 
     axios.post("https://test.api.bbk.kg/sign-in", requestBody)
@@ -39,8 +39,8 @@ export default function Login() {
         setIsError(true)
         setTimeout(() => {
           setIsError(false)
-          elPhoneNumber.current.value = ""
-          elPassword.current.value = ""
+         if(elPhoneNumber.current)  elPhoneNumber.current.value = ''
+        if(elPassword.current) elPassword.current.value = ''
         }, 3000)
       })
   }
@@ -58,7 +58,8 @@ export default function Login() {
             <div className='login_label_input'>
               <label className={`text ${!isError || "text_err"}`}>номер телефона</label>
               <input className={`login_input ${!isError || "login_input_err"}`} maxLength={9} onInput={(e) => {
-                e.target.value = e.target.value.replace(/\D/g, "").slice(0, 9)
+                const input = e.target as HTMLInputElement;
+                input.value = input.value.replace(/\D/g, "").slice(0, 9)
               }} ref={elPhoneNumber} type="number" />
             </div>
             <div className='login_label_input'>
